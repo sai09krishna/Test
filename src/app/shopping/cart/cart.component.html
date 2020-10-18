@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="toolbar" role="banner">
+        <ul>
+            <li>
+                Shopping Cart
+            </li>
+            <li>
+                <a (click)="gotoShop()">GotoShop</a>
+            </li>
+        </ul>
+    </div>
+    <div class="content" *ngFor="let item of cartItems">
+        <div class="image-content" *ngIf="item!=null">
+            <img src="./../../../assets/pics/618X2KYevNL._SL1500_.jpg">
+        </div>
+        <div class="content-details" *ngIf="item!=null">
+            <p>{{item.name}}</p>
+            <p>{{item.cost | currency: 'INR'}}</p>
+            <p><button (click)="incrementOrDec(item,'increment')">+</button><button>{{item.total}}</button><button
+                    (click)="incrementOrDec(item,'decrement')">-</button></p>
+            <p><button class="removeButton" (click)="removeItem(item)">RemoveItem</button></p>
+        </div>
+    </div>
+    <div *ngIf="buttonShow" class="footer">
+        <p><button (click)="showDetails()">CheckOut</button></p>
+        <div *ngIf="show" class="totalPrice">
+            <!-- <div class="items" *ngFor="let item of cartItems">
+                <p>Item: {{item.name}}------Price: {{item.cost| currency:'INR'}}----NoOfItems: {{item.total}}------TotalPrice:
+                    {{item.cost * item.total}} </p>
+            </div> -->
+            <table class="priceTable">
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>NoOfItems</th>
+                    <th>TotalCost</th>
+                </tr>
+                <tr *ngFor="let item of cartItems">
+                    <td>{{item.name}}</td>
+                    <td> {{item.cost | currency:'INR'}} </td>
+                    <td> {{item.total}} </td>
+                    <td>{{item.cost * item.total |currency:'INR'}}</td>
+                </tr>
+            </table>
+            <div *ngIf="show" class="sumOfTotal">
+                <p>The Total Price {{totalPrice | currency:'INR'}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="cartItems.length ==0" class="empty-content">
+    <p>No items is added to cart go to shop</p>
+    <button (click)="backTo()">BackToShop</button>
+</div>
