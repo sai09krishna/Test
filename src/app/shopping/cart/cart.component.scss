@@ -1,0 +1,129 @@
+.container{
+    padding: 0 0 10px 0;
+    .footer{
+        text-align: center;
+        padding: 10px;
+        p{
+            button{
+                width: 50%;
+                border: none;
+                padding: 10px;
+                letter-spacing: 2px;
+                background-color: #928dab;
+                color: whitesmoke;
+                cursor: pointer;
+                &:focus{
+                    outline: none;
+                    border: none;
+                }
+            }
+        }
+        .totalPrice{
+            margin-top: 10px;
+            table{
+                width: 100%;
+                border: 1px solid #928dab;
+            }
+            th,td{
+                border: 1px solid #928dab;
+            }
+            .priceTable{
+                border-collapse: collapse;
+            }
+            .sumOfTotal{
+                text-align: end;
+                padding-right: 100px;
+            }
+        }
+    }
+    .toolbar{
+        padding: 0;
+        background: #3a7bd5; 
+        ul{
+            list-style-type: none;
+            padding: 7px;
+            color: antiquewhite;
+            li{
+                display: inline-block;
+                padding: 2px 5px;
+                cursor: default;
+                input{
+                    border-radius: 20px;
+                    padding-left: 10px;
+                    &:focus{
+                        outline: none;
+                    }
+                }
+                a{
+                    cursor: pointer;
+                }
+                &:nth-child(2){
+                    float: right;
+                }
+            }
+            &::after{
+                clear: both;
+            }
+        }
+    } 
+    .content{
+        display: flex;
+        margin: 5px;
+        padding: 5px;
+        box-shadow: 2px 2px 4px #928dab ;
+        &:hover{
+            box-shadow: 2px 2px 7px #3a7bd5;
+        }
+        .image-content{
+            width: 11vw;
+            transition: box-shadow 1s;
+            img{
+                width: 100%;
+            }
+        }
+        .content-details{
+        padding:8px;
+        p{
+            margin-bottom: 5px;
+            &:nth-child(3){
+                border: 1px solid #3a7bd5;
+                width: 100px;
+            }
+            &:nth-child(4){
+                border: 1px solid #3a7bd5;
+                width: 100px;
+            }
+            .removeButton{
+                background-color: #3a7bd5;
+                color: antiquewhite;
+                padding: 10px 13px;
+            }
+            button{
+                border: none;
+                padding: 10px 13px;
+                cursor: pointer;
+                &:nth-child(1){
+                    border-right: 1px solid #3a7bd5;
+                }
+                &:nth-child(3){
+                    border-left: 1px solid #3a7bd5;
+                    padding-right: 14px;
+                    font-weight: bolder;
+                }
+
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+
+        }
+    }
+}
+.empty-content{
+    text-align: center;
+    padding: 10px;
+    p{
+        margin-bottom: 10px;
+    }
+}

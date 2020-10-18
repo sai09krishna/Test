@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="toolbar" role="banner">
+        <ul>
+            <li>
+                Shopping Cart
+            </li>
+            <li>
+                <a (click)="gotoCart()">GotoCart</a>
+            </li>
+            <li>
+                <input class="filterInput" [(ngModel)]="searchTerm"  placeholder="Search by Product Name">
+            </li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="content-body" *ngFor="let item of itemsList | customSearch:searchTerm">
+            <img src="./../../../assets/pics/618X2KYevNL._SL1500_.jpg" alt="ItemImage">
+            <p>{{item.name}}</p>
+            <p>{{item.cost  | currency:'INR'}}</p>
+            <button class="cartButton" (click)="addTo(item)">Add To Cart</button>
+        </div>
+    </div>
+</div>
